@@ -10,7 +10,6 @@ const server = http.createServer((req, res) => {
     res.write('<body><h1>Hello From Nodejs Server</h1></body>');
     res.write('</html>');
     res.end();
-
 });
 
 server.listen(port);
