@@ -9,5 +9,8 @@
     "start server": "node server.js"
   },
   "author": "ppz",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
