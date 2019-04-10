@@ -1,15 +1,20 @@
-const http = require('http');
 const port = 3000;
 
 const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
-    console.log('in the middleware');
-    next(); //allow the request to continue to the next middleware in line
+app.use('/', (req, res, next) => {
+    console.log('This always running');
+    next();
 });
-app.use((req, res, next) => {
+
+app.use('/admin', (req, res, next) => {
+    console.log('in the another middleware');
+    res.send('<h1>Welcome! "admin"</h1>');// send() allow us to send well a response
+});
+
+app.use('/', (req, res, next) => {
     console.log('in the another middleware');
     res.send('<h1>Hello express_js!</h1>');// send() allow us to send well a response
 });
