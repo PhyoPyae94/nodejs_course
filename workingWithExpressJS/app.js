@@ -1,21 +1,22 @@
 const port = 3000;
 
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use('/', (req, res, next) => {
-    console.log('This always running');
-    next();
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/add-product', (req, res, next) => {
+    res.send('<html><body><form action="/product" method="POST"><input type="text" name="message"><button type="submit">Add product</button></form></body></html>');
 });
 
-app.use('/admin', (req, res, next) => {
-    console.log('in the another middleware');
-    res.send('<h1>Welcome! "admin"</h1>');// send() allow us to send well a response
+app.use('/product', (req, res, next) => {
+    console.log(req.body);
+    res.redirect('/');
 });
 
 app.use('/', (req, res, next) => {
-    console.log('in the another middleware');
     res.send('<h1>Hello express_js!</h1>');// send() allow us to send well a response
 });
 // use method allow us to add new middle ware function
