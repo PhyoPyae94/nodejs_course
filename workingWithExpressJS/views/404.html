@@ -5,8 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Page not found</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .mainHeader {
+            width: 100%;
+            height: 50px;
+            background: #595c8f;
+        }
+        .mainNavbar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .list-group {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .mainNavbar li a {
+            text-decoration: none;
+            color: #000000;
+            margin: 10px 0px 10px 30px;
+        }
+        .mainNavbar li a:hover,
+        .mainNavbar li a:active,
+        .mainNavbar li a.active {
+            color: #0a08aa;
+        }
+
+        main {
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
+    <header class="mainHeader">
+        <nav class="mainNavbar">
+            <ul class="list-group">
+                <li class="list-group-item"><a class ="active" href="/">Shop</a></li>
+                <li class="list-group-item"><a href="/admin/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>404 error Page Not Found!</h1>
 </body>
 </html>
